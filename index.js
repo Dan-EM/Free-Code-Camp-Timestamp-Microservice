@@ -18,6 +18,8 @@ app.get("/", function (req, res) {
   res.sendFile(__dirname + '/views/index.html');
 });
 
+const isInvalid = (dateInput) => dateInput.toUTCString() === "Invalid Date"
+
 app.get("/api/:date", (req, res) => {
   
   //initialize dateInput
